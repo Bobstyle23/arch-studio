@@ -1,0 +1,31 @@
+$breakpoint-tablets: "(min-width: 48em)";
+$breakpoint-large-tablets: "(min-width: 64em)";
+$breakpoint-desktops: "(min-width: 75em)";
+
+$spacing-6: 0.6rem;
+$spacing-8: 0.8rem;
+$spacing-16: 1.6rem;
+$spacing-24: 2.4rem;
+$spacing-30: 3rem;
+$spacing-32: 3.2rem;
+$spacing-40: 4rem;
+$spacing-48: 4.8rem;
+$spacing-52: 5.2rem;
+$spacing-56: 5.6rem;
+$spacing-64: 6.4rem;
+$spacing-72: 7.2rem;
+$spacing-80: 8rem;
+$spacing-96: 9.6rem;
+$spacing-200: 20rem;
+
+$color-black: #000;
+$color-white: #fff;
+$color-red: #df5656;
+$color-neutral-200: #e1e1e1;
+$color-slate-500: #7d828f;
+$color-slate-200: #c8ccd8;
+$color-slate-100: #eeeff4;
+$color-zinc-900: rgb(27, 29, 35);
+$color-zinc-600: #60636d;
+$color-stone-100: #eae8e8;
+$color-gradient: rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5);
