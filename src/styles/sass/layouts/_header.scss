@@ -1,0 +1,42 @@
+.menu__btn {
+  background-color: transparent;
+
+  @include respond-to($breakpoint-tablets) {
+    display: none;
+  }
+}
+
+.menu__icon {
+  width: 2.4rem;
+  height: 1.7rem;
+  fill: $color-zinc-900;
+}
+
+.navigation {
+  background-color: $color-slate-100;
+  padding-inline: $spacing-48;
+  padding-block: 4.2rem;
+  position: fixed;
+  width: 100%;
+  max-width: 34.5rem;
+  top: $spacing-96;
+  right: 0;
+  transform: translateX(100%);
+  opacity: 0;
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
+
+  @include respond-to($breakpoint-tablets) {
+    position: static;
+    background-color: transparent;
+    opacity: 1;
+    transform: translateX(0);
+    padding: 0;
+  }
+}
+
+.navigation--active {
+  opacity: 1;
+  transform: translateX(0);
+}

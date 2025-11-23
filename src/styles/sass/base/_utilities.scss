@@ -6,9 +6,24 @@
   @include containerWidth(111rem);
 }
 
+.resizing * {
+  transition: none !important;
+  animation: none !important;
+}
+
 .icon {
   width: 2.4rem;
   height: 1.8rem;
   stroke: $color-white;
   fill: none;
+}
+
+.logo {
+  width: 7.7rem;
+  height: 3.2rem;
+
+  @include respond-to($breakpoint-tablets) {
+    width: 9.6rem;
+    height: 4rem;
+  }
 }
