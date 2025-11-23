@@ -1,7 +1,20 @@
+.header {
+  @extend %flexbox;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-32;
+
+  @include respond-to($breakpoint-tablets) {
+    padding-block: $spacing-56;
+    padding-inline: 9.7rem;
+  }
+}
+
 .menu__btn {
   background-color: transparent;
 
-  @include respond-to($breakpoint-tablets) {
+  @include respond-to("(min-width: 40em)") {
     display: none;
   }
 }
@@ -27,12 +40,45 @@
     transform 0.35s ease,
     opacity 0.35s ease;
 
-  @include respond-to($breakpoint-tablets) {
+  @include respond-to("(min-width: 40em)") {
     position: static;
     background-color: transparent;
     opacity: 1;
     transform: translateX(0);
     padding: 0;
+    max-width: none;
+    align-self: flex-end;
+  }
+}
+
+.navigation__list {
+  @extend %flexbox;
+  gap: $spacing-16;
+  align-items: flex-start;
+
+  @include respond-to("(min-width: 40em)") {
+    flex-flow: row nowrap;
+    gap: $spacing-56;
+    align-items: center;
+    justify-content: flex-start;
+    margin-inline-start: $spacing-96;
+    align-self: flex-end;
+  }
+}
+
+.navigation__item a {
+  @extend %text-preset-4;
+  color: $color-zinc-900;
+  transition: all 0.25s ease;
+
+  @include respond-to("(min-width: 40em)") {
+    font-size: 1.8rem;
+    line-height: 1.4;
+    color: $color-slate-500;
+
+    &:hover {
+      color: $color-zinc-900;
+    }
   }
 }
 
