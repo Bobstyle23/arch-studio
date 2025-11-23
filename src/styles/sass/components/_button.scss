@@ -1,0 +1,35 @@
+.button {
+  @extend %text-preset-6-bold;
+  @extend %flexbox;
+  flex-flow: row nowrap;
+  align-items: center;
+  transition: all 0.25s ease;
+
+  &__primary {
+    gap: $spacing-24;
+    padding-block: $spacing-24;
+    padding-inline: $spacing-32;
+    background-color: $color-zinc-900;
+    color: $color-white;
+
+    &--icon {
+      padding: $spacing-32;
+    }
+
+    &:hover {
+      background-color: $color-zinc-600;
+      cursor: pointer;
+    }
+  }
+
+  &__page {
+    color: $color-slate-500;
+    padding-block: $spacing-30;
+    padding-inline: $spacing-32;
+    background-color: $color-white;
+
+    &:hover {
+      background-color: $color-slate-100;
+    }
+  }
+}

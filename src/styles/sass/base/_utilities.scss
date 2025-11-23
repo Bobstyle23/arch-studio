@@ -5,3 +5,10 @@
 .container {
   @include containerWidth(111rem);
 }
+
+.icon {
+  width: 2.4rem;
+  height: 1.8rem;
+  stroke: $color-white;
+  fill: none;
+}
