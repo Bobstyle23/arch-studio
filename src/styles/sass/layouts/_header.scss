@@ -49,6 +49,11 @@
     max-width: none;
     align-self: flex-end;
   }
+
+  &--active {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .navigation__list {
@@ -70,6 +75,7 @@
   @extend %text-preset-4;
   color: $color-zinc-900;
   transition: all 0.25s ease;
+  position: relative;
 
   @include respond-to("(min-width: 40em)") {
     font-size: 1.8rem;
@@ -82,7 +88,16 @@
   }
 }
 
-.navigation--active {
-  opacity: 1;
-  transform: translateX(0);
+.navigation__item--active a {
+  color: $color-zinc-900;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 2.4rem;
+    height: 0.1rem;
+    background-color: $color-zinc-900;
+  }
 }
