@@ -14,7 +14,7 @@
 .menu__btn {
   background-color: transparent;
 
-  @include respond-to("(min-width: 40em)") {
+  @include respond-to("(min-width: 37.5em)") {
     display: none;
   }
 }
@@ -40,7 +40,7 @@
     transform 0.35s ease,
     opacity 0.35s ease;
 
-  @include respond-to("(min-width: 40em)") {
+  @include respond-to("(min-width: 37.5em)") {
     position: static;
     background-color: transparent;
     opacity: 1;
@@ -61,7 +61,7 @@
   gap: $spacing-16;
   align-items: flex-start;
 
-  @include respond-to("(min-width: 40em)") {
+  @include respond-to("(min-width: 37.5em)") {
     flex-flow: row nowrap;
     gap: $spacing-56;
     align-items: center;
@@ -77,7 +77,7 @@
   transition: all 0.25s ease;
   position: relative;
 
-  @include respond-to("(min-width: 40em)") {
+  @include respond-to("(min-width: 37.5em)") {
     font-size: 1.8rem;
     line-height: 1.4;
     color: $color-slate-500;
