@@ -89,15 +89,24 @@
 }
 
 .navigation__item--active a {
-  color: $color-zinc-900;
+  color: $color-slate-500;
 
   &::after {
     content: "";
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 2.4rem;
     height: 0.1rem;
-    background-color: $color-zinc-900;
+    width: 50%;
+    background-color: currentColor;
+  }
+
+  @include respond-to("(min-width: 37.5em)") {
+    color: $color-zinc-900;
+
+    &::after {
+      background-color: $color-zinc-900;
+      width: 2.4rem;
+    }
   }
 }
