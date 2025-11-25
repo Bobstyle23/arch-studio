@@ -1,7 +1,7 @@
 const menuBtn = document.querySelector(".menu__btn");
 const navigationContainer = document.querySelector(".navigation");
 const navigationListItems = document.querySelectorAll(".navigation__item");
-const media = window.matchMedia("(min-width: 768px)");
+const media = window.matchMedia("(min-width: 37.5em)");
 
 [...navigationListItems].forEach((item) => {
   item.addEventListener("click", () => {
