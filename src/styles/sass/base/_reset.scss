@@ -23,6 +23,7 @@ body {
   font-family: "LeagueSpartan", sans-serif;
   font-weight: 400;
   @include containerWidth(144rem);
+  position: relative;
 }
 
 h1,

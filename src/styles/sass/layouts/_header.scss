@@ -9,6 +9,14 @@
     padding-block: $spacing-56;
     padding-inline: 9.7rem;
   }
+
+  @include respond-to($breakpoint-large-tablets) {
+    padding-inline: 6.2rem;
+  }
+
+  @include respond-to($breakpoint-desktops) {
+    padding-inline: 0;
+  }
 }
 
 .menu__btn {
@@ -107,6 +115,47 @@
     &::after {
       background-color: $color-zinc-900;
       width: 2.4rem;
+    }
+  }
+}
+
+.decor {
+  display: none;
+
+  @include respond-to($breakpoint-tablets) {
+    display: block;
+
+    &--line {
+      position: absolute;
+      width: 1px;
+      height: 104px;
+      background-color: $color-slate-200;
+      left: 4.8rem;
+    }
+
+    &--page {
+      position: absolute;
+      left: 2.25rem;
+      transform: rotate(90deg);
+      top: calc(10.4rem + 4.8rem);
+      color: $color-slate-200;
+      font-size: 1.8rem;
+      font-weight: 500;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+  }
+
+  @include respond-to($breakpoint-large-tablets) {
+    &--line {
+      left: 2.4rem;
+    }
+
+    &--page {
+      left: -0.2rem;
+      /* left: -3.6rem; */
+      /* letter-spacing: 1.8rem; */
+      /* top: calc(15.2rem + 4.8rem); */
     }
   }
 }
