@@ -5,27 +5,10 @@
   justify-content: space-between;
   padding: $spacing-32;
   position: relative;
-
-  @include respond-to($breakpoint-tablets) {
-    padding-block: $spacing-56;
-    padding-inline: 9.7rem;
-  }
-
-  @include respond-to($breakpoint-large-tablets) {
-    padding-inline: 4.8rem;
-  }
-
-  @include respond-to($breakpoint-desktops) {
-    padding-inline: 0;
-  }
 }
 
 .menu__btn {
   background-color: transparent;
-
-  @include respond-to("(min-width: 37.5em)") {
-    display: none;
-  }
 }
 
 .menu__icon {
@@ -49,16 +32,6 @@
     transform 0.35s ease,
     opacity 0.35s ease;
 
-  @include respond-to("(min-width: 37.5em)") {
-    position: static;
-    background-color: transparent;
-    opacity: 1;
-    transform: translateX(0);
-    padding: 0;
-    max-width: none;
-    align-self: flex-end;
-  }
-
   &--active {
     opacity: 1;
     transform: translateX(0);
@@ -69,15 +42,6 @@
   @extend %flexbox;
   gap: $spacing-16;
   align-items: flex-start;
-
-  @include respond-to("(min-width: 37.5em)") {
-    flex-flow: row nowrap;
-    gap: $spacing-56;
-    align-items: center;
-    justify-content: flex-start;
-    margin-inline-start: $spacing-96;
-    align-self: flex-end;
-  }
 }
 
 .navigation__item a {
@@ -85,16 +49,6 @@
   color: $color-zinc-900;
   transition: all 0.25s ease;
   position: relative;
-
-  @include respond-to("(min-width: 37.5em)") {
-    font-size: 1.8rem;
-    line-height: 1.4;
-    color: $color-slate-500;
-
-    &:hover {
-      color: $color-zinc-900;
-    }
-  }
 }
 
 .navigation__item--active a {
@@ -109,8 +63,47 @@
     width: 50%;
     background-color: currentColor;
   }
+}
 
-  @include respond-to("(min-width: 37.5em)") {
+.decor__header {
+  display: none;
+}
+
+@include respond-to("(min-width: 37.5em)") {
+  .menu__btn {
+    display: none;
+  }
+
+  .navigation {
+    position: static;
+    background-color: transparent;
+    opacity: 1;
+    transform: translateX(0);
+    padding: 0;
+    max-width: none;
+    align-self: flex-end;
+  }
+
+  .navigation__list {
+    flex-flow: row nowrap;
+    gap: $spacing-56;
+    align-items: center;
+    justify-content: flex-start;
+    margin-inline-start: $spacing-96;
+    align-self: flex-end;
+  }
+
+  .navigation__item a {
+    font-size: 1.8rem;
+    line-height: 1.4;
+    color: $color-slate-500;
+
+    &:hover {
+      color: $color-zinc-900;
+    }
+  }
+
+  .navigation__item--active a {
     color: $color-zinc-900;
 
     &::after {
@@ -120,10 +113,13 @@
   }
 }
 
-.decor__header {
-  display: none;
+@include respond-to($breakpoint-tablets) {
+  .header {
+    padding-block: $spacing-56;
+    padding-inline: 9.7rem;
+  }
 
-  @include respond-to($breakpoint-tablets) {
+  .decor__header {
     display: block;
 
     &--line {
@@ -148,8 +144,14 @@
       letter-spacing: 0;
     }
   }
+}
 
-  @include respond-to($breakpoint-large-tablets) {
+@include respond-to($breakpoint-large-tablets) {
+  .header {
+    padding-inline: 4.8rem;
+  }
+
+  .decor__header {
     &--line {
       left: 2.4rem;
     }
@@ -159,8 +161,14 @@
       letter-spacing: 1.8rem;
     }
   }
+}
 
-  @include respond-to($breakpoint-desktops) {
+@include respond-to($breakpoint-desktops) {
+  .header {
+    padding-inline: 0;
+  }
+
+  .decor__header {
     &--line {
       left: -2.4rem;
     }
@@ -169,8 +177,10 @@
       left: -1.2rem;
     }
   }
+}
 
-  @include respond-to("(min-width: 81.25em)") {
+@include respond-to("(min-width: 81.25em)") {
+  .decor__header {
     &--line {
       left: -8.4rem;
     }
