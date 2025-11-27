@@ -2,6 +2,7 @@
   @extend %grid;
   grid-template-areas: "stack";
   margin-block-end: $spacing-72;
+  position: relative;
 
   &__image,
   &__content {
@@ -18,7 +19,6 @@
       display: block;
       background-color: $color-black;
       opacity: 0.35;
-      z-index: 1;
     }
   }
 
@@ -45,6 +45,10 @@
 
   &__link {
     justify-self: start;
+  }
+
+  &__buttons {
+    display: none;
   }
 }
 
@@ -80,6 +84,29 @@
 
     &__content {
       margin-inline-start: $spacing-200;
+    }
+  }
+}
+
+@include respond-to("(min-width: 80em)") {
+  .hero {
+    &__buttons {
+      display: flex;
+      position: absolute;
+      left: -8rem;
+      bottom: 0;
+      background-color: $color-white;
+      z-index: 2;
+    }
+
+    &__button {
+      width: 8rem;
+      height: 8rem;
+    }
+
+    &__button--active {
+      background-color: $color-zinc-900;
+      color: $color-white;
     }
   }
 }

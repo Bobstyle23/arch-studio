@@ -1,3 +1,9 @@
+const heroContainer = document.querySelector(".hero");
+const heroPageButtons = document.querySelectorAll(".hero__button");
+const heroImage = document.querySelector(".hero__image");
+const heroTitle = document.querySelector(".hero__title");
+const heroDesc = document.querySelector(".hero__description");
+
 const resizeObserver = new ResizeObserver(function addResizingClass() {
   document.body.classList.add("resizing");
 
@@ -51,4 +57,36 @@ const heroData = [
   },
 ];
 
-console.log(heroData);
+[...heroPageButtons].forEach(function getButton(button) {
+  button.addEventListener("click", function controlButton() {
+    document
+      .querySelector(".hero__button--active")
+      ?.classList.remove("hero__button--active");
+
+    this.classList.add("hero__button--active");
+    console.log("clicked", this.textContent.trim().split("").pop());
+  });
+});
+
+(function loadInitialHeroContent() {
+  const heroImage = `<picture class="hero__image">
+        <source
+          srcset=${heroData[0].image.desktop}
+          media="(min-width: 75em)"
+          type="image/webp"
+        />
+        <source
+          srcset=${heroData[0].image.tablet}
+          media="(min-width: 48em)"
+          type="image/webp"
+        />
+        <img src=${heroData[0].image.mobile} alt="" />
+      </picture>
+`;
+  console.log(heroImage);
+  heroContainer.insertAdjacentHTML("beforeend", heroImage);
+  heroTitle.textContent = heroData[0].title;
+  heroDesc.textContent = heroData[0].description;
+})();
+
+function loadHeroContent() {}
