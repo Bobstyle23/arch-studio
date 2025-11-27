@@ -41,7 +41,7 @@ const heroData = [
       tablet: "./img/home/tablet/image-hero-federal.webp",
       mobile: "./img/home/mobile/image-hero-federal.webp",
     },
-    title: "Federal II Tower",
+    title: "Federal II\nTower",
     description:
       "A sequel theme project for a tower originally built in the 1800s. We achieved this with a striking look of brutal minimalism with modern touches.",
   },
@@ -51,7 +51,7 @@ const heroData = [
       tablet: "./img/home/tablet/image-hero-trinity.webp",
       mobile: "./img/home/mobile/image-hero-trinity.webp",
     },
-    title: "Trinity Bank Tower",
+    title: "Trinity Bank\nTower",
     description:
       "Trinity Bank challenged us to make a concept for a 84 story building located in the middle of a city with a high earthquake frequency. For this project we used curves to blend design and stability to meet our objectives.",
   },
@@ -94,7 +94,7 @@ function loadHeroImage(idx) {
 }
 
 function loadHeroContents(idx = 0) {
-  const title = heroData[idx].title;
+  const title = heroData[idx].title.replace(/\n/g, "<br>");
   const description = heroData[idx].description;
 
   return { title, description };
@@ -104,6 +104,6 @@ function loadHero(idx = 0) {
   const image = loadHeroImage(idx);
   const { title, description } = loadHeroContents(idx);
   heroContainer.insertAdjacentHTML("beforeend", image);
-  heroTitle.textContent = title;
-  heroDesc.textContent = description;
+  heroTitle.innerHTML = title;
+  heroDesc.innerHTML = description;
 }
