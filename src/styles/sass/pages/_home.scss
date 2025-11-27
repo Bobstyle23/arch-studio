@@ -1,18 +1,20 @@
 .hero {
   @extend %grid;
   grid-template-areas: "stack";
+  margin-block-end: $spacing-72;
+
+  &__image,
+  &__content {
+    grid-area: stack;
+  }
 
   &__image {
-    grid-area: stack;
     position: relative;
 
     &::after {
       content: "";
       position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
+      inset: 0; //top, right, bottom, left: 0; width, height: 100%;
       display: block;
       background-color: $color-black;
       opacity: 0.35;
@@ -21,7 +23,6 @@
   }
 
   &__content {
-    grid-area: stack;
     padding-inline: $spacing-32;
     z-index: 2;
   }
@@ -44,5 +45,41 @@
 
   &__link {
     justify-self: start;
+  }
+}
+
+@include respond-to($breakpoint-tablets) {
+  .hero {
+    margin-inline: 9.7rem;
+    margin-block-end: 9.7rem;
+    place-items: start;
+
+    &__content {
+      max-width: 43.4rem;
+      padding-inline: 0;
+      margin-inline-start: $spacing-56;
+      margin-block-start: $spacing-200;
+    }
+
+    &__title {
+      font-size: 9.6rem;
+      line-height: 0.85;
+      letter-spacing: -0.2rem;
+    }
+
+    &__description {
+      text-wrap: pretty;
+      margin-block-end: $spacing-40;
+    }
+  }
+}
+
+@include respond-to($breakpoint-desktops) {
+  .hero {
+    margin-inline: auto;
+
+    &__content {
+      margin-inline-start: $spacing-200;
+    }
   }
 }

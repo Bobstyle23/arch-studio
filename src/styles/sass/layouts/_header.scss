@@ -35,6 +35,7 @@
   &--active {
     opacity: 1;
     transform: translateX(0);
+    z-index: 3;
   }
 }
 
@@ -147,17 +148,17 @@
 }
 
 @include respond-to($breakpoint-large-tablets) {
-  .header {
-    padding-inline: 4.8rem;
-  }
+  /* .header { */
+  /*   padding-inline: 4.8rem; */
+  /* } */
 
   .decor__header {
     &--line {
-      left: 2.4rem;
+      left: 4.8rem;
     }
 
     &--page {
-      left: 3.4rem;
+      left: 5.8rem;
       letter-spacing: 1.8rem;
     }
   }
@@ -170,11 +171,11 @@
 
   .decor__header {
     &--line {
-      left: -2.4rem;
+      left: -3.6rem;
     }
 
     &--page {
-      left: -1.2rem;
+      left: -2.4rem;
     }
   }
 }
