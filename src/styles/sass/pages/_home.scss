@@ -1,0 +1,48 @@
+.hero {
+  @extend %grid;
+  grid-template-areas: "stack";
+
+  &__image {
+    grid-area: stack;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      display: block;
+      background-color: $color-black;
+      opacity: 0.35;
+      z-index: 1;
+    }
+  }
+
+  &__content {
+    grid-area: stack;
+    padding-inline: $spacing-32;
+    z-index: 2;
+  }
+
+  &__title,
+  &__description {
+    color: $color-white;
+  }
+
+  &__title {
+    @extend %text-preset-3-mob;
+    margin-block-end: $spacing-8;
+  }
+
+  &__description {
+    @extend %text-preset-6-medium;
+    margin-block-end: $spacing-80;
+    text-wrap: auto;
+  }
+
+  &__link {
+    justify-self: start;
+  }
+}
