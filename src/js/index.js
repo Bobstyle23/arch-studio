@@ -57,36 +57,57 @@ const heroData = [
   },
 ];
 
-[...heroPageButtons].forEach(function getButton(button) {
+[...heroPageButtons].forEach(function getButton(button, idx) {
   button.addEventListener("click", function controlButton() {
     document
       .querySelector(".hero__button--active")
       ?.classList.remove("hero__button--active");
 
     this.classList.add("hero__button--active");
-    console.log("clicked", this.textContent.trim().split("").pop());
+    loadHero(idx);
   });
 });
 
-(function loadInitialHeroContent() {
-  const heroImage = `<picture class="hero__image">
+function loadHeroImage(idx = 0) {
+  const oldImage = heroContainer.querySelector("picture");
+  if (oldImage) {
+    oldImage.remove();
+  }
+  return `<picture class="hero__image">
         <source
-          srcset=${heroData[0].image.desktop}
+          srcset=${heroData[idx].image.desktop}
           media="(min-width: 75em)"
           type="image/webp"
         />
         <source
-          srcset=${heroData[0].image.tablet}
+          srcset=${heroData[idx].image.tablet}
           media="(min-width: 48em)"
           type="image/webp"
         />
-        <img src=${heroData[0].image.mobile} alt="" />
-      </picture>
-`;
-  console.log(heroImage);
-  heroContainer.insertAdjacentHTML("beforeend", heroImage);
-  heroTitle.textContent = heroData[0].title;
-  heroDesc.textContent = heroData[0].description;
+        <img src=${heroData[idx].image.mobile} alt="" />
+      </picture>`;
+}
+
+function loadHeroContents(idx = 0) {
+  const title = heroData[idx].title;
+  const description = heroData[idx].description;
+
+  return { title, description };
+}
+
+(function loadInitialHero() {
+  const image = loadHeroImage();
+  const { title, description } = loadHeroContents();
+  heroContainer.insertAdjacentHTML("beforeend", image);
+  heroTitle.textContent = title;
+  heroDesc.textContent = description;
+  [...heroPageButtons][0].classList.add("hero__button--active");
 })();
 
-function loadHeroContent() {}
+function loadHero(idx) {
+  const image = loadHeroImage(idx);
+  const { title, description } = loadHeroContents(idx);
+  heroContainer.insertAdjacentHTML("beforeend", image);
+  heroTitle.textContent = title;
+  heroDesc.textContent = description;
+}
