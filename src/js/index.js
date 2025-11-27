@@ -68,8 +68,13 @@ const heroData = [
   });
 });
 
-function loadHeroImage(idx = 0) {
+[...heroPageButtons][0].classList.add("hero__button--active");
+
+loadHero();
+
+function loadHeroImage(idx) {
   const oldImage = heroContainer.querySelector("picture");
+  //PERF: REMOVES PREVIOUSLY ADDED IMAGE BEFORE ADDING A NEW ONE
   if (oldImage) {
     oldImage.remove();
   }
@@ -95,16 +100,7 @@ function loadHeroContents(idx = 0) {
   return { title, description };
 }
 
-(function loadInitialHero() {
-  const image = loadHeroImage();
-  const { title, description } = loadHeroContents();
-  heroContainer.insertAdjacentHTML("beforeend", image);
-  heroTitle.textContent = title;
-  heroDesc.textContent = description;
-  [...heroPageButtons][0].classList.add("hero__button--active");
-})();
-
-function loadHero(idx) {
+function loadHero(idx = 0) {
   const image = loadHeroImage(idx);
   const { title, description } = loadHeroContents(idx);
   heroContainer.insertAdjacentHTML("beforeend", image);
