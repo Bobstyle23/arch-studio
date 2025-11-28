@@ -117,6 +117,70 @@
   }
 }
 
+.featured {
+  @extend %grid;
+  justify-items: stretch;
+  margin-block-end: 7.3rem;
+  margin-inline: $spacing-32;
+
+  &__title {
+    @extend %text-preset-3-mob;
+    color: $color-zinc-900;
+    margin-block-end: $spacing-40;
+  }
+
+  &__images {
+    @extend %grid;
+    justify-items: stretch;
+    row-gap: $spacing-24;
+  }
+
+  &__images div {
+    @extend %grid;
+    grid-template-areas: "stack";
+    align-items: end;
+    justify-items: start;
+  }
+
+  &__img,
+  &__content {
+    grid-area: stack;
+  }
+
+  &__img {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: $color-black;
+      opacity: 0.35;
+    }
+  }
+
+  &__content {
+    z-index: 1;
+    margin-inline-start: $spacing-24;
+    margin-block-end: $spacing-16;
+  }
+
+  &__content-title {
+    @extend %text-preset-4;
+    color: $color-white;
+  }
+
+  &__content-link {
+    @extend %text-preset-6-medium;
+    color: $color-white;
+    opacity: 0.75;
+  }
+
+  &__link {
+    margin-block-start: $spacing-24;
+  }
+}
+
 @include respond-to($breakpoint-tablets) {
   .hero {
     margin-inline: 9.7rem;
