@@ -81,7 +81,7 @@ function loadHeroImage(idx) {
   return `<picture class="hero__image">
         <source
           srcset=${heroData[idx].image.desktop}
-          media="(min-width: 75em)"
+          media="(min-width: 64em)"
           type="image/webp"
         />
         <source
