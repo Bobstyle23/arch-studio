@@ -139,6 +139,19 @@
   }
 }
 
+@include respond-to($breakpoint-large-tablets) {
+  .welcome {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: $spacing-80;
+
+    &__headline {
+      font-size: 16rem;
+      grid-column: 1 / -1;
+    }
+  }
+}
+
 @include respond-to($breakpoint-desktops) {
   .hero {
     margin-inline: auto;
@@ -150,8 +163,6 @@
 
   .welcome {
     margin-inline: auto;
-    display: grid;
-    grid-template-columns: 1fr auto;
     column-gap: 12.5rem;
     margin-block-start: 10.9rem;
 
