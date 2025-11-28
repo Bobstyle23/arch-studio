@@ -105,7 +105,33 @@
         <img src="" alt="" />
       </picture>
     </section>
+    <section class="ideas container">
+      <picture class="ideas__img">
+        <source
+          srcset="./img/home/desktop/image-small-team.webp"
+          type="image/webp"
+          media="(min-width: 75em)"
+        />
+        <source
+          srcset="./img/home/tablet/image-small-team.webp"
+          type="image/webp"
+          media="(min-width: 48em)"
+        />
 
+        <img src="./img/home/mobile/image-small-team.webp" alt="" />
+      </picture>
+      <div class="ideas__content">
+        <h3 class="ideas__title">Small team,<br />big ideas</h3>
+        <a href="/" class="ideas__link button button__primary"
+          >About Us
+          <span
+            ><svg class="icon">
+              <use
+                href="./img/svgsprite/sprite.symbol.svg#icon-arrow"
+              ></use></svg></span
+        ></a>
+      </div>
+    </section>
     <script src="./js/index.bundle.js"></script>
     <script src="./js/navigation.bundle.js"></script>
   </body>

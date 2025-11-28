@@ -85,6 +85,38 @@
   }
 }
 
+.ideas {
+  @extend %grid;
+  grid-template-areas: "stack";
+  margin-block-end: 7.3rem;
+
+  &__img {
+    grid-area: stack;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: $color-black;
+      opacity: 0.35;
+    }
+  }
+
+  &__content {
+    grid-area: stack;
+    z-index: 1;
+    justify-self: start;
+    margin-inline-start: $spacing-32;
+  }
+
+  &__title {
+    @extend %text-preset-3-mob;
+    color: $color-white;
+    margin-block-end: $spacing-30;
+  }
+}
+
 @include respond-to($breakpoint-tablets) {
   .hero {
     margin-inline: 9.7rem;
