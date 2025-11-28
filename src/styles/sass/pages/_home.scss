@@ -184,7 +184,7 @@
 @include respond-to($breakpoint-tablets) {
   .hero {
     margin-inline: 9.7rem;
-    margin-block-end: 9.7rem;
+    margin-block-end: 11.3rem;
     place-items: start;
 
     &__content {
@@ -249,6 +249,40 @@
 
     &__link {
       justify-self: start;
+    }
+  }
+
+  .featured {
+    margin-block-start: 11.3rem;
+    margin-inline: 9.7rem;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+    row-gap: $spacing-64;
+
+    &__title {
+      grid-column: 1 / 2;
+      grid-row: 1;
+      margin-block-end: 0;
+      font-size: 7.2rem;
+      line-height: 0.9;
+      letter-spacing: -0.2rem;
+    }
+
+    &__link {
+      grid-column: 2;
+      grid-row: 1;
+      margin-block-start: 0;
+      justify-self: end;
+    }
+
+    &__images {
+      grid-column: 1 / -1;
+      row-gap: $spacing-30;
+    }
+
+    &__content {
+      margin-inline-start: $spacing-40;
+      margin-block-end: $spacing-32;
     }
   }
 }
