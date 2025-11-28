@@ -52,6 +52,39 @@
   }
 }
 
+.welcome {
+  margin-block-end: 11.3rem;
+  margin-inline: $spacing-32;
+  padding-block-start: $spacing-64;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 6.5rem;
+    height: 1px;
+    top: 0;
+    left: 0;
+    background-color: $color-slate-200;
+  }
+
+  &__text {
+    @extend %flexbox;
+    gap: $spacing-24;
+    align-items: flex-start;
+  }
+
+  &__title {
+    @extend %text-preset-3-mob;
+    color: $color-zinc-900;
+  }
+
+  &__desc {
+    @extend %text-preset-6-medium;
+    color: $color-zinc-600;
+  }
+}
+
 @include respond-to($breakpoint-tablets) {
   .hero {
     margin-inline: 9.7rem;
@@ -77,6 +110,33 @@
       margin-block-end: $spacing-40;
     }
   }
+
+  .welcome {
+    margin-inline: 9.7rem;
+    padding-block-start: 0;
+
+    &::before {
+      width: 0;
+      height: 0;
+    }
+
+    &__headline {
+      display: block;
+      font-size: 12rem;
+      letter-spacing: -0.3rem;
+      color: $color-slate-100;
+    }
+
+    &__text {
+      gap: $spacing-40;
+    }
+
+    &__title {
+      font-size: 7.2rem;
+      line-height: 0.9;
+      letter-spacing: -0.2rem;
+    }
+  }
 }
 
 @include respond-to($breakpoint-desktops) {
@@ -85,6 +145,30 @@
 
     &__content {
       margin-inline-start: $spacing-200;
+    }
+  }
+
+  .welcome {
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 12.5rem;
+    margin-block-start: 10.9rem;
+
+    &__text {
+      margin-inline-start: 18.9rem;
+      margin-block-start: 16rem;
+    }
+
+    &__headline {
+      font-size: 25rem;
+      line-height: 0.8;
+      letter-spacing: -0.5rem;
+      position: absolute;
+    }
+
+    &__img {
+      align-self: end;
     }
   }
 }
