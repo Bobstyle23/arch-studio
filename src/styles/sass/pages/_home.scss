@@ -280,6 +280,22 @@
       row-gap: $spacing-30;
     }
 
+    &__img {
+      &::before {
+        content: attr(data-content);
+        position: absolute;
+        right: 1rem;
+        top: 4rem;
+        color: $color-white;
+        z-index: 1;
+        font-size: 25rem;
+        font-weight: 700;
+        line-height: 0.8;
+        letter-spacing: -0.5rem;
+        opacity: 0.5;
+      }
+    }
+
     &__content {
       margin-inline-start: $spacing-40;
       margin-block-end: $spacing-32;
