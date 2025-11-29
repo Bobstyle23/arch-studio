@@ -1,0 +1,49 @@
+.portfolios {
+  @extend %grid;
+  justify-items: stretch;
+  row-gap: $spacing-24;
+  margin-block-start: $spacing-56;
+  margin-block-end: calc(6rem + $spacing-72);
+  margin-inline: $spacing-32;
+}
+
+.portfolio {
+  @extend %grid;
+  grid-template-areas: "stack";
+
+  &__img,
+  &__content {
+    grid-area: stack;
+  }
+
+  &__img {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: $color-black;
+      opacity: 0.35;
+    }
+  }
+
+  &__content {
+    align-self: end;
+    justify-self: start;
+    margin-inline-start: $spacing-40;
+    margin-block-end: $spacing-32;
+    z-index: 1;
+  }
+
+  &__title {
+    @extend %text-preset-4;
+    color: $color-white;
+  }
+
+  &__date {
+    @extend %text-preset-6-medium;
+    color: $color-white;
+    opacity: 0.75;
+  }
+}
