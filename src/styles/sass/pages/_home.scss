@@ -120,7 +120,7 @@
 .featured {
   @extend %grid;
   justify-items: stretch;
-  margin-block-end: 7.3rem;
+  margin-block-end: calc(6rem + 7.3rem);
   margin-inline: $spacing-32;
 
   &__title {
@@ -253,7 +253,8 @@
   }
 
   .featured {
-    margin-block-start: 11.3rem;
+    margin-block: 11.3rem;
+
     margin-inline: 9.7rem;
     grid-template-columns: repeat(2, 1fr);
     align-items: start;
@@ -314,11 +315,40 @@
       grid-column: 1 / -1;
     }
   }
+
+  .ideas {
+    margin-block-end: 0;
+  }
+
+  .featured {
+    grid-template-columns: repeat(3, 1fr);
+
+    &__images {
+      grid-column: 1 / -1;
+
+      grid-template-columns: repeat(auto-fit, minmax(min(30rem, 100%), 1fr));
+      column-gap: $spacing-30;
+    }
+
+    &__link {
+      grid-column: 3;
+    }
+
+    &__img::before {
+      right: -1rem;
+      top: 4.5rem;
+    }
+
+    &__content {
+      margin-block-end: $spacing-40;
+    }
+  }
 }
 
 @include respond-to($breakpoint-desktops) {
   .hero {
     margin-inline: auto;
+    margin-block-end: 10.9rem;
 
     &__content {
       margin-inline-start: $spacing-200;
@@ -350,9 +380,15 @@
 
   .ideas {
     margin-inline: auto;
+    margin-block-end: $spacing-200;
     &__content {
       margin-inline-start: $spacing-200;
     }
+  }
+
+  .featured {
+    margin-inline: auto;
+    margin-block-end: $spacing-200;
   }
 }
 
