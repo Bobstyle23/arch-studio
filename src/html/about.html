@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Arch | About</title>
+    <link href="./css/main.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    @@include("./header.html")
+    <main class="about">
+      <section class="about__hero">
+        <picture class="about__img">
+          <source
+            srcset="./img/about/desktop/image-hero.webp"
+            type="image/webp"
+            media="(min-width: 64em)"
+          />
+          <source
+            srcset="./img/about/tablet/image-hero.webp"
+            type="image/webp"
+            media="(min-width: 48em)"
+          />
+
+          <img src="./img/about/mobile/image-hero.webp" alt="" />
+        </picture>
+        <div class="about__info">
+          <h3 class="about__title">Your team of<br />professionals</h3>
+          <p class="about__desc">
+            Our small team of world-class professionals will work with you every
+            step of the way. Strong relationships are at the core of everything
+            we do. This extends to the relationship our projects have with their
+            surroundings.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    @@include("./footer.html")
+    <script src="./js/index.bundle.js"></script>
+    <script src="./js/navigation.bundle.js"></script>
+  </body>
+</html>
