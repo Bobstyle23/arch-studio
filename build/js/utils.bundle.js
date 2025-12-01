@@ -1,0 +1,1 @@
+new ResizeObserver(function(){document.body.classList.add("resizing"),requestAnimationFrame(function(){document.body.classList.remove("resizing")})}).observe(document.body);

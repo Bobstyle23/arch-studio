@@ -4,16 +4,6 @@ const heroImage = document.querySelector(".hero__image");
 const heroTitle = document.querySelector(".hero__title");
 const heroDesc = document.querySelector(".hero__description");
 
-const resizeObserver = new ResizeObserver(function addResizingClass() {
-  document.body.classList.add("resizing");
-
-  requestAnimationFrame(function removeResizingClass() {
-    document.body.classList.remove("resizing");
-  });
-});
-
-resizeObserver.observe(document.body);
-
 const heroData = [
   {
     image: {
