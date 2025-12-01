@@ -1,44 +1,43 @@
 .footer {
   @extend %grid;
-  grid-template-rows: repeat(3, auto);
-  justify-items: stretch;
+  grid-template-rows: repeat(10, auto);
 
   &__logo {
     @extend %flexbox;
-    justify-self: center;
     width: 12rem;
     height: 12rem;
     background-color: $color-zinc-900;
-    grid-area: 1 / 1 / 2 / -1;
-    z-index: 2;
-    transform: translateY(-50%);
+
+    svg {
+      width: 6rem;
+      height: 2.5rem;
+      fill: $color-white;
+    }
   }
 
-  &__logo svg {
-    width: 6rem;
-    height: 2.5rem;
-    fill: $color-white;
-  }
-
-  &__links {
-    grid-area: 1 / 1 / span 3 / -1;
+  &__logo {
+    grid-row: 1 / 3;
+    grid-column: 1;
     z-index: 1;
   }
 
   &__navigation {
-    @extend %flexbox;
     background-color: $color-slate-100;
+    width: 100%;
     height: 38.3rem;
-    max-width: 78.4rem;
+    grid-row: 2 / 11;
+    grid-column: 1 / -1;
+    @extend %flexbox;
+    justify-content: center;
   }
 
   &__navigation-list {
     @extend %flexbox;
     gap: $spacing-32;
-    margin-top: -4.7rem;
+    margin-block-end: 6.4rem;
   }
 
-  &__navigation-list li a {
+  &__navigation-list a {
     @extend %text-preset-6-bold;
     color: $color-slate-500;
     transition: color 0.25s ease;
@@ -49,75 +48,165 @@
   }
 
   &__button {
-    justify-self: center;
-    grid-area: 3 / 1 / span 1 / -1;
-    z-index: 2;
-    margin-bottom: 4.7rem;
+    grid-row: 7 / 10;
+    grid-column: 1;
   }
 }
 
 @include respond-to($breakpoint-tablets) {
   .footer {
-    grid-template-columns: auto 1fr auto;
-    grid-template-rows: 1fr;
-    max-width: 76.8rem;
-  }
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 12rem;
+    justify-items: stretch;
 
-  .footer__logo {
-    grid-column: 1 / 2;
-    grid-row: 1;
-    transform: translateY(0);
-  }
+    & > * {
+      grid-row: 1;
+    }
 
-  .footer__links {
-    grid-column: 2 / 4;
-    grid-row: 1;
-  }
+    &__logo {
+      grid-column: 1 / 2;
+    }
 
-  .footer__navigation {
-    height: 12rem;
-    width: 49.2rem;
-  }
+    &__navigation {
+      height: 100%;
+      grid-column: 2 / 9;
+      align-items: flex-start;
+      padding-inline-start: $spacing-40;
+    }
 
-  .footer__navigation-list {
-    flex-flow: row nowrap;
-    margin-top: 0;
-    gap: $spacing-56;
-    align-self: start;
-    padding-inline-start: $spacing-40;
-    padding-inline-end: $spacing-48;
-  }
+    &__navigation-list {
+      flex-flow: row nowrap;
+      gap: $spacing-56;
+      margin: 0;
+    }
 
-  .footer__button {
-    grid-column: 3;
-    grid-row: 1;
-    margin-bottom: 0;
+    &__button {
+      grid-column: 7 / 11;
+      justify-self: end;
+    }
   }
 }
 
-@include respond-to($breakpoint-large-tablets) {
-  .footer {
-    max-width: 111rem;
-    grid-template-rows: 20rem;
-  }
-
-  .footer__logo {
-    height: 100%;
-    width: 20rem;
-  }
-
-  .footer__navigation {
-    height: 20rem;
-    width: 67rem;
-  }
-
-  .footer__navigation-list {
-    padding-inline-start: $spacing-80;
-  }
-}
-
-@include respond-to("(min-width: 66.25em)") {
-  .footer__navigation {
-    width: 100%;
-  }
-}
+/* .footer { */
+/*   @extend %grid; */
+/*   grid-template-rows: repeat(3, auto); */
+/*   justify-items: stretch; */
+/**/
+/*   &__logo { */
+/*     @extend %flexbox; */
+/*     justify-self: center; */
+/*     width: 12rem; */
+/*     height: 12rem; */
+/*     background-color: $color-zinc-900; */
+/*     grid-area: 1 / 1 / 2 / -1; */
+/*     z-index: 2; */
+/*     transform: translateY(-50%); */
+/*   } */
+/**/
+/*   &__logo svg { */
+/*     width: 6rem; */
+/*     height: 2.5rem; */
+/*     fill: $color-white; */
+/*   } */
+/**/
+/*   &__links { */
+/*     grid-area: 1 / 1 / span 3 / -1; */
+/*     z-index: 1; */
+/*   } */
+/**/
+/*   &__navigation { */
+/*     @extend %flexbox; */
+/*     background-color: $color-slate-100; */
+/*     height: 38.3rem; */
+/*     max-width: 78.4rem; */
+/*   } */
+/**/
+/*   &__navigation-list { */
+/*     @extend %flexbox; */
+/*     gap: $spacing-32; */
+/*     margin-top: -4.7rem; */
+/*   } */
+/**/
+/*   &__navigation-list li a { */
+/*     @extend %text-preset-6-bold; */
+/*     color: $color-slate-500; */
+/*     transition: color 0.25s ease; */
+/**/
+/*     &:hover { */
+/*       color: $color-zinc-900; */
+/*     } */
+/*   } */
+/**/
+/*   &__button { */
+/*     justify-self: center; */
+/*     grid-area: 3 / 1 / span 1 / -1; */
+/*     z-index: 2; */
+/*     margin-bottom: 4.7rem; */
+/*   } */
+/* } */
+/**/
+/* @include respond-to($breakpoint-tablets) { */
+/*   .footer { */
+/*     grid-template-columns: auto 1fr auto; */
+/*     grid-template-rows: 1fr; */
+/*     max-width: 76.8rem; */
+/*   } */
+/**/
+/*   .footer__logo { */
+/*     grid-column: 1 / 2; */
+/*     grid-row: 1; */
+/*     transform: translateY(0); */
+/*   } */
+/**/
+/*   .footer__links { */
+/*     grid-column: 2 / 4; */
+/*     grid-row: 1; */
+/*   } */
+/**/
+/*   .footer__navigation { */
+/*     height: 12rem; */
+/*     width: 49.2rem; */
+/*   } */
+/**/
+/*   .footer__navigation-list { */
+/*     flex-flow: row nowrap; */
+/*     margin-top: 0; */
+/*     gap: $spacing-56; */
+/*     align-self: start; */
+/*     padding-inline-start: $spacing-40; */
+/*     padding-inline-end: $spacing-48; */
+/*   } */
+/**/
+/*   .footer__button { */
+/*     grid-column: 3; */
+/*     grid-row: 1; */
+/*     margin-bottom: 0; */
+/*   } */
+/* } */
+/**/
+/* @include respond-to($breakpoint-large-tablets) { */
+/*   .footer { */
+/*     max-width: 111rem; */
+/*     grid-template-rows: 20rem; */
+/*   } */
+/**/
+/*   .footer__logo { */
+/*     height: 100%; */
+/*     width: 20rem; */
+/*   } */
+/**/
+/*   .footer__navigation { */
+/*     height: 20rem; */
+/*     width: 67rem; */
+/*   } */
+/**/
+/*   .footer__navigation-list { */
+/*     padding-inline-start: $spacing-80; */
+/*   } */
+/* } */
+/**/
+/* @include respond-to("(min-width: 66.25em)") { */
+/*   .footer__navigation { */
+/*     width: 100%; */
+/*   } */
+/* } */
