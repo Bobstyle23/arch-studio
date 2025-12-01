@@ -67,7 +67,7 @@
       position: relative;
 
       &::before {
-        content: "About";
+        content: attr(data-label);
         position: absolute;
         top: -8.5rem;
         right: 0;

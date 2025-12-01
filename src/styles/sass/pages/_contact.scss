@@ -1,0 +1,22 @@
+.contact {
+}
+
+@include respond-to($breakpoint-tablets) {
+  .contact {
+  }
+}
+
+@include respond-to($breakpoint-large-tablets) {
+  .contact {
+  }
+}
+
+@include respond-to($breakpoint-desktops) {
+  .contact {
+    .hero-section__info {
+      &::before {
+        left: -19.8rem;
+      }
+    }
+  }
+}

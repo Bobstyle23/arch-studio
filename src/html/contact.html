@@ -3,44 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Arch | About</title>
-    <link href="./css/main.css" rel="stylesheet" type="text/css" />
+    <title>Arch | Contact</title>
+    <link href="./css/main.css" rel="stylesheet" />
   </head>
   <body>
     @@include("./header.html")
-    <main class="about container">
+    <main class="contact container">
       <section class="hero-section">
         <picture class="hero-section__img">
           <source
-            srcset="./img/about/desktop/image-hero.webp"
+            srcset="./img/contact/desktop/image-hero.webp"
             type="image/webp"
             media="(min-width: 64em)"
           />
           <source
-            srcset="./img/about/tablet/image-hero.webp"
+            srcset="./img/contact/tablet/image-hero.webp"
             type="image/webp"
             media="(min-width: 48em)"
           />
 
-          <img src="./img/about/mobile/image-hero.webp" alt="" />
+          <img src="./img/contact/mobile/image-hero.webp" alt="" />
         </picture>
-        <div class="hero-section__info" data-label="About">
+        <div class="hero-section__info" data-label="Contact">
           <div>
-            <h3 class="hero-section__title">Your team of<br />professionals</h3>
+            <h3 class="hero-section__title">Tell us about<br />your project</h3>
             <p class="hero-section__desc">
-              Our small team of world-class professionals will work with you
-              every step of the way. Strong relationships are at the core of
-              everything we do. This extends to the relationship our projects
-              have with their surroundings.
+              We’d love to hear more about your project. Please, leave a message
+              below or give us a call. We have two offices, one in Texas and one
+              in Tennessee. If you find yourself nearby, come say hello!
             </p>
           </div>
         </div>
       </section>
     </main>
-
     @@include("./footer.html")
     <script src="./js/index.bundle.js"></script>
-
     <script src="./js/navigation.bundle.js"></script>
   </body>
 </html>
