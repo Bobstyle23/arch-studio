@@ -19,27 +19,126 @@
     }
 
     &__info {
-      @extend %flexbox;
-      align-items: flex-start;
-      justify-content: flex-end;
-      gap: $spacing-16;
+      @extend %grid;
       height: 33.5rem;
       background-color: $color-white;
       padding-inline-start: $spacing-32;
       margin-inline-end: $spacing-32;
       grid-area: 5 / 1 / 11 / -1;
       z-index: 1;
+
+      div {
+        place-self: end;
+      }
     }
 
     &__title {
       @extend %text-preset-3-mob;
       color: $color-zinc-900;
-      margin-block-end: 0;
+      margin-block-end: $spacing-16;
     }
 
     &__desc {
       @extend %text-preset-6-medium;
       color: $color-zinc-600;
+    }
+  }
+}
+
+@include respond-to($breakpoint-tablets) {
+  .about {
+    .hero {
+      grid-template-columns: repeat(10, auto);
+      grid-template-rows: 1fr;
+
+      margin-block-end: $spacing-200;
+      place-items: start;
+
+      &__img {
+        width: auto;
+      }
+
+      &__info {
+        grid-row: 3 / 6;
+        height: 43.1rem;
+        width: 51.5rem;
+        margin-inline-end: 0;
+        justify-self: end;
+        padding-inline-start: 5.8rem;
+
+        position: relative;
+
+        &::before {
+          content: "About";
+          position: absolute;
+          top: -8.5rem;
+          right: 0;
+          color: $color-slate-100;
+          font-size: 12rem;
+          font-weight: 700;
+          line-height: 1.65;
+          letter-spacing: -0.3rem;
+        }
+
+        div {
+          max-width: 45.6rem;
+          position: relative;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6.5rem;
+            height: 1px;
+            background-color: $color-slate-200;
+          }
+        }
+      }
+
+      &__title {
+        font-size: 7.2rem;
+        line-height: 0.9;
+        letter-spacing: -0.2rem;
+        margin-block: $spacing-72 $spacing-40;
+      }
+    }
+  }
+}
+
+@include respond-to($breakpoint-large-tablets) {
+  .about .hero__info {
+    &::before {
+      font-size: 16rem;
+      top: -12rem;
+      left: -1.2rem;
+    }
+  }
+}
+
+@include respond-to($breakpoint-desktops) {
+  .about {
+    .hero {
+      margin-inline: auto;
+
+      &__img {
+        grid-column: 1 / 8;
+      }
+
+      &__info {
+        width: 63rem;
+        height: 50.3rem;
+        grid-column: 6 / 11;
+        padding-inline: 0;
+
+        &::before {
+          left: -1.2rem;
+          top: -8.5rem;
+          font-size: 25rem;
+          line-height: 0.8;
+          letter-spacing: -0.5rem;
+        }
+      }
     }
   }
 }
