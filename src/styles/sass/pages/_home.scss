@@ -120,7 +120,7 @@
 .featured {
   @extend %grid;
   justify-items: stretch;
-  margin-block-end: calc(6rem + 7.3rem);
+  margin-block-end: 7.3rem;
   margin-inline: $spacing-32;
 
   &__title {
