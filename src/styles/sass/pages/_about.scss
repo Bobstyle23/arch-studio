@@ -31,6 +31,44 @@
       color: $color-zinc-600;
     }
   }
+
+  .leaders {
+    @extend %grid;
+    justify-items: stretch;
+    row-gap: $spacing-52;
+    margin-inline: $spacing-32;
+    margin-block-end: 12.2rem;
+
+    &__title {
+      @extend %text-preset-3-mob;
+      color: $color-zinc-900;
+    }
+
+    &__profiles {
+      @extend %grid;
+      justify-items: stretch;
+      row-gap: $spacing-80;
+      grid-template-columns: repeat(auto-fit, minmax(min(28rem, 100%), 1fr));
+      column-gap: 1.2rem;
+    }
+
+    &__profile {
+      @extend %flexbox;
+      align-items: flex-start;
+      gap: $spacing-16;
+    }
+
+    &__name {
+      @extend %text-preset-4;
+      color: $color-zinc-900;
+    }
+
+    &__position {
+      @extend %text-preset-6-medium;
+      color: $color-zinc-900;
+      opacity: 0.75;
+    }
+  }
 }
 
 @include respond-to($breakpoint-tablets) {
@@ -48,6 +86,22 @@
         line-height: 0.9;
         letter-spacing: -0.2rem;
         margin-block-end: calc($spacing-56 - $spacing-24);
+      }
+    }
+
+    .leaders {
+      margin-inline: 9.7rem;
+      margin-block-end: 11.3rem;
+      row-gap: $spacing-48;
+
+      &__title {
+        font-size: 7.2rem;
+        line-height: 0.9;
+        letter-spacing: -0.2rem;
+      }
+
+      &__profiles {
+        row-gap: 10.3rem;
       }
     }
   }
@@ -74,6 +128,18 @@
 
       &__info {
         padding-block-start: 8.8rem;
+      }
+    }
+
+    .leaders {
+      margin-inline: auto;
+      grid-template-columns: 38rem 1fr;
+      align-items: start;
+      margin-block-end: $spacing-200;
+
+      &__profiles {
+        row-gap: $spacing-64;
+        column-gap: 3rem;
       }
     }
   }
