@@ -1,4 +1,36 @@
 .about {
+  .heritage {
+    margin-inline: $spacing-32;
+    margin-block-end: 10.8rem;
+
+    &__info {
+      @extend %flexbox;
+      align-items: flex-start;
+      gap: $spacing-24;
+      padding-block-start: 6.8rem;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 6.5rem;
+        height: 1px;
+        background-color: $color-slate-200;
+      }
+    }
+
+    &__title {
+      @extend %text-preset-3-mob;
+      color: $color-zinc-900;
+    }
+
+    &__desc {
+      @extend %text-preset-6-medium;
+      color: $color-zinc-600;
+    }
+  }
 }
 
 @include respond-to($breakpoint-tablets) {
