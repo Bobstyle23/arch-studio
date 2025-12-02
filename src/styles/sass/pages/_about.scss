@@ -35,15 +35,46 @@
 
 @include respond-to($breakpoint-tablets) {
   .about {
+    .heritage {
+      margin-inline: 9.7rem;
+      margin-block-end: 11.3rem;
+
+      &__info {
+        padding-block-start: 5.3rem;
+      }
+
+      &__title {
+        font-size: 7.2rem;
+        line-height: 0.9;
+        letter-spacing: -0.2rem;
+        margin-block-end: calc($spacing-56 - $spacing-24);
+      }
+    }
   }
 }
 
 @include respond-to($breakpoint-large-tablets) {
   .about {
+    .heritage {
+      display: grid;
+      grid-template-columns: 40rem 1fr;
+      column-gap: 8rem;
+      align-items: end;
+    }
   }
 }
 
 @include respond-to($breakpoint-desktops) {
   .about {
+    .heritage {
+      margin-inline: auto;
+      margin-block-end: $spacing-200;
+      grid-template-columns: 44.6rem 1fr;
+      column-gap: 12.4rem;
+
+      &__info {
+        padding-block-start: 8.8rem;
+      }
+    }
   }
 }
