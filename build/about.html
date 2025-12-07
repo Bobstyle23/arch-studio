@@ -20,13 +20,13 @@
   </a>
   <nav class="navigation" aria-label="Main Navigation" id="Main navigation">
     <ul role="list" class="navigation__list">
-      <li class="navigation__item" data-tab="1">
+      <li class="navigation__item" data-tab="1" data-tab-name="portfolio">
         <a href="./portfolio.html">Portfolio</a>
       </li>
-      <li class="navigation__item" data-tab="2">
+      <li class="navigation__item" data-tab="2" data-tab-name="about us">
         <a href="./about.html">About Us</a>
       </li>
-      <li class="navigation__item" data-tab="3">
+      <li class="navigation__item" data-tab="3" data-tab-name="contact">
         <a href="./contact.html">Contact</a>
       </li>
     </ul>
@@ -168,12 +168,22 @@
   </a>
   <nav class="footer__navigation" aria-label="Footer navigation">
     <ul role="list" class="footer__navigation-list">
-      <li><a href="./portfolio.html">Portfolio</a></li>
-      <li><a href="./about.html">About Us</a></li>
-      <li><a href="./contact.html">Contact</a></li>
+      <li class="navigation__item" data-tab="1" data-tab-name="portfolio">
+        <a href="./portfolio.html">Portfolio</a>
+      </li>
+      <li class="navigation__item" data-tab="2" data-tab-name="about us">
+        <a href="./about.html">About Us</a>
+      </li>
+      <li class="navigation__item" data-tab="3" data-tab-name="contact">
+        <a href="./contact.html">Contact</a>
+      </li>
     </ul>
   </nav>
-  <a href="./portfolio.html" class="button button__primary footer__button"
+  <a
+    href="./portfolio.html"
+    class="button button__primary footer__button navigation__item"
+    data-tab="1"
+    data-tab-name="portfolio"
     >See Our Portfolio
     <span aria-hidden="true"
       ><svg class="icon">

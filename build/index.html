@@ -21,13 +21,13 @@
   </a>
   <nav class="navigation" aria-label="Main Navigation" id="Main navigation">
     <ul role="list" class="navigation__list">
-      <li class="navigation__item" data-tab="1">
+      <li class="navigation__item" data-tab="1" data-tab-name="portfolio">
         <a href="./portfolio.html">Portfolio</a>
       </li>
-      <li class="navigation__item" data-tab="2">
+      <li class="navigation__item" data-tab="2" data-tab-name="about us">
         <a href="./about.html">About Us</a>
       </li>
-      <li class="navigation__item" data-tab="3">
+      <li class="navigation__item" data-tab="3" data-tab-name="contact">
         <a href="./contact.html">Contact</a>
       </li>
     </ul>
@@ -48,7 +48,11 @@
       <div class="hero__content">
         <h3 class="hero__title"></h3>
         <p class="hero__description"></p>
-        <a href="./portfolio.html" class="hero__link button button__primary"
+        <a
+          href="./portfolio.html"
+          class="hero__link button button__primary navigation__item"
+          data-tab="1"
+          data-tab-name="portfolio"
           >See Our Portfolio
           <span
             ><svg class="icon">
@@ -122,7 +126,11 @@
       </picture>
       <div class="ideas__content">
         <h3 class="ideas__title">Small team,<br />big ideas</h3>
-        <a href="/" class="ideas__link button button__primary"
+        <a
+          href="./about.html"
+          class="ideas__link button button__primary navigation__item"
+          data-tab="2"
+          data-tab-name="about us"
           >About Us
           <span
             ><svg class="icon">
@@ -151,7 +159,11 @@
           </picture>
           <div class="featured__content">
             <h4 class="featured__content-title">Project Del Sol</h4>
-            <a href="./portfolio.html" class="featured__content-link"
+            <a
+              href="./portfolio.html"
+              class="featured__content-link navigation__item"
+              data-tab="1"
+              data-tab-name="portfolio"
               >View All Projects</a
             >
           </div>
@@ -174,7 +186,11 @@
           </picture>
           <div class="featured__content">
             <h4 class="featured__content-title">228B Tower</h4>
-            <a href="./portfolio.html" class="featured__content-link"
+            <a
+              href="./portfolio.html"
+              class="featured__content-link navigation__item"
+              data-tab="1"
+              data-tab-name="portfolio"
               >View All Projects</a
             >
           </div>
@@ -197,13 +213,21 @@
           </picture>
           <div class="featured__content">
             <h4 class="featured__content-title">Le&#160;Prototype</h4>
-            <a href="./portfolio.html" class="featured__content-link"
+            <a
+              href="./portfolio.html"
+              class="featured__content-link navigation__item"
+              data-tab="1"
+              data-tab-name="portfolio"
               >View All Projects</a
             >
           </div>
         </div>
       </div>
-      <a href="./portfolio.html" class="featured__link button button__primary"
+      <a
+        href="./portfolio.html"
+        class="featured__link button button__primary navigation__item"
+        data-tab="1"
+        data-tab-name="portfolio"
         >See All
         <span>
           <svg class="icon">
@@ -220,12 +244,22 @@
   </a>
   <nav class="footer__navigation" aria-label="Footer navigation">
     <ul role="list" class="footer__navigation-list">
-      <li><a href="./portfolio.html">Portfolio</a></li>
-      <li><a href="./about.html">About Us</a></li>
-      <li><a href="./contact.html">Contact</a></li>
+      <li class="navigation__item" data-tab="1" data-tab-name="portfolio">
+        <a href="./portfolio.html">Portfolio</a>
+      </li>
+      <li class="navigation__item" data-tab="2" data-tab-name="about us">
+        <a href="./about.html">About Us</a>
+      </li>
+      <li class="navigation__item" data-tab="3" data-tab-name="contact">
+        <a href="./contact.html">Contact</a>
+      </li>
     </ul>
   </nav>
-  <a href="./portfolio.html" class="button button__primary footer__button"
+  <a
+    href="./portfolio.html"
+    class="button button__primary footer__button navigation__item"
+    data-tab="1"
+    data-tab-name="portfolio"
     >See Our Portfolio
     <span aria-hidden="true"
       ><svg class="icon">
