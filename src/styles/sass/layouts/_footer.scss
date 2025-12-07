@@ -35,7 +35,7 @@
     margin-block-end: 6.4rem;
   }
 
-  &__navigation-list a {
+  &__navigation-list li a {
     @extend %text-preset-6-bold;
     color: $color-slate-500;
     transition: color 0.25s ease;
