@@ -3,6 +3,7 @@ const navigationContainer = document.querySelector(".navigation");
 const navigationListItems = document.querySelectorAll(".navigation__item");
 const decorPageText = document.querySelector(".decor__header--page");
 const media = window.matchMedia("(min-width: 37.5em)");
+const overlay = document.querySelector(".overlay");
 
 [...navigationListItems].forEach((item) => {
   item.addEventListener("click", () => {
@@ -32,12 +33,29 @@ if (savedTab) {
   }
 }
 
+overlay.addEventListener("click", removeActiveNavigation);
+
+window.addEventListener("scroll", removeActiveNavigation);
+
 menuBtn.addEventListener("click", function toggleActiveClass() {
   navigationContainer.classList.toggle("navigation--active");
+  overlay.classList.toggle("overlay__hidden");
 });
 
 media.addEventListener("change", function removeActiveClass(event) {
   if (event.matches) {
     navigationContainer.classList.remove("navigation--active");
+    overlay.classList.add("overlay__hidden");
   }
 });
+
+function toggleOverlayAndNavigation() {
+  navigationContainer.classList.remove("navigation--active");
+  overlay.classList.add("overlay__hidden");
+}
+
+function removeActiveNavigation() {
+  if (navigationContainer.classList.contains("navigation--active")) {
+    toggleOverlayAndNavigation();
+  }
+}
