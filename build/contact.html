@@ -144,6 +144,45 @@
           </a>
         </div>
       </section>
+
+      <section class="connect">
+        <picture class="connect__map">
+          <source
+            srcset="./img/contact/desktop/image-map.webp"
+            media="(min-width: 64em)"
+            type="image/webp"
+          />
+          <source
+            srcset="./img/contact/tablet/image-map.webp"
+            media="(min-width: 48em)"
+            type="image/webp"
+          />
+          <img src="./img/contact/mobile/image-map.webp" alt="" />
+        </picture>
+        <div class="connect__input-container">
+          <h3 class="connect__title">Connect with us</h3>
+          <form class="connect__form">
+            <div>
+              <input type="text" name="name" value="" placeholder="Name" />
+            </div>
+            <div>
+              <input type="email" name="email" value="" placeholder="Email" />
+            </div>
+            <div>
+              <textarea rows="" cols="" placeholder="Message"></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="connect__btn button button__primary button__primary--icon"
+            >
+              <svg class="icon">
+                <use href="./img/svgsprite/sprite.symbol.svg#icon-arrow"></use>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </section>
     </main>
     <footer class="footer container">
   <a href="./index.html" class="footer__logo">
