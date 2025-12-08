@@ -89,6 +89,13 @@
 
 @include respond-to($breakpoint-large-tablets) {
   .contact {
+    .details {
+      grid-template-columns: repeat(auto-fit, minmax(min(30rem, 100%), auto));
+
+      &__office--second {
+        grid-column: 2;
+      }
+    }
   }
 }
 
@@ -98,6 +105,28 @@
       &::before {
         left: -19.8rem;
         top: -8.7rem;
+      }
+    }
+
+    .details {
+      margin-inline: auto;
+      margin-block-end: $spacing-200;
+      column-gap: $spacing-30;
+      align-items: start;
+
+      &__office {
+        grid-template-columns: 1fr;
+        justify-items: start;
+        row-gap: $spacing-56;
+
+        &--second {
+          grid-row: 1;
+          grid-column: 3;
+        }
+      }
+
+      &__link {
+        justify-self: start;
       }
     }
   }
