@@ -27,3 +27,16 @@
     height: 4rem;
   }
 }
+
+.error {
+  position: relative;
+
+  &::after {
+    content: "Can't be empty";
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: $color-red;
+    @extend %text-preset-6-bold;
+  }
+}

@@ -26,6 +26,7 @@ const config = {
     index: "./src/js/index.js",
     navigation: "./src/js/navigation.js",
     utils: "./src/js/utils.js",
+    contact: "./src/js/contact.js",
   },
   output: {
     filename: "[name].bundle.js",

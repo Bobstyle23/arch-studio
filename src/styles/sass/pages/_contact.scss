@@ -86,8 +86,7 @@
     }
 
     &__btn {
-      justify-self: end;
-      align-self: end;
+      place-self: end;
     }
 
     input,
@@ -150,6 +149,19 @@
 
     .connect {
       margin-inline: 9.7rem;
+      margin-block-end: 11.3rem;
+      gap: 11.3rem;
+
+      &__title {
+        font-size: 7.2rem;
+        line-height: 0.9;
+        letter-spacing: -0.2rem;
+      }
+
+      &__input-container {
+        margin-inline: 0;
+        row-gap: $spacing-48;
+      }
     }
   }
 }
@@ -161,6 +173,16 @@
 
       &__office--second {
         grid-column: 2;
+      }
+    }
+
+    .connect {
+      gap: 16rem;
+
+      &__input-container {
+        grid-template-columns: 35rem 1fr;
+        column-gap: $spacing-30;
+        align-items: start;
       }
     }
   }
@@ -199,6 +221,7 @@
 
     .connect {
       margin-inline: auto;
+      margin-block-end: $spacing-200;
     }
   }
 }
