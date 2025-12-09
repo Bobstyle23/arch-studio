@@ -80,13 +80,13 @@
     }
 
     &__form {
-      @extend %flexbox;
-      align-items: stretch;
+      @extend %grid;
+      justify-items: stretch;
       gap: $spacing-32;
     }
 
     &__btn {
-      place-self: end;
+      margin-inline-start: auto;
     }
 
     input,
