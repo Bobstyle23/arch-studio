@@ -1,25 +1,46 @@
-const nameField = document.querySelector("input[name=name]");
-const emailField = document.querySelector("input[type=email]");
-const messageField = document.querySelector("textarea");
-const formSubmitBtn = document.querySelector(".connect__btn");
-const inputWrappers = document.querySelectorAll(".connect__form div");
-
 const myForm = document.querySelector("form");
-var emptyFields = [];
+const formSubmitBtn = document.querySelector(".connect__btn");
 
-for (let i = 0; i < myForm.elements.length - 1; i++) {
-  const element = myForm.elements[i];
-  if (element.value.trim() == "") {
-    emptyFields.push(element);
-  }
-}
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-formSubmitBtn.addEventListener("click", function submitForm(event) {
+formSubmitBtn.addEventListener("click", function (event) {
   event.preventDefault();
 
-  if (emptyFields.length) {
-    emptyFields.forEach((field) => {
-      field.closest("div").classList.add("error");
+  const fields = myForm.querySelectorAll("input, textarea");
+  let hasError = false;
+
+  function setErrorMessage(wrapper, message = `"Can't be empty"`) {
+    wrapper.classList.add("error");
+    wrapper.style.setProperty("--error-message", message);
+  }
+
+  function checkField(wrapper, field) {
+    if (field.value.trim() === "") {
+      setErrorMessage(wrapper);
+      hasError = true;
+    }
+
+    if (field.type === "email" && field.value.trim() !== "") {
+      if (!emailRegex.test(field.value.trim())) {
+        setErrorMessage(wrapper, `"Invalid email"`);
+        hasError = true;
+      }
+    }
+  }
+
+  fields.forEach((field) => {
+    const wrapper = field.closest("div");
+
+    field.addEventListener("input", function () {
+      wrapper.classList.remove("error");
+
+      checkField(wrapper, field);
     });
+
+    checkField(wrapper, field);
+  });
+
+  if (!hasError) {
+    myForm.submit();
   }
 });

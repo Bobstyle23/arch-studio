@@ -31,8 +31,18 @@
 .error {
   position: relative;
 
+  input,
+  textarea {
+    border-bottom: 3px solid rgba($color: $color-red, $alpha: 0.5) !important;
+
+    &::placeholder {
+      color: $color-red !important;
+      opacity: 0.5;
+    }
+  }
+
   &::after {
-    content: "Can't be empty";
+    content: var(--error-message, "Can't be empty");
     position: absolute;
     right: 0;
     top: 0;
